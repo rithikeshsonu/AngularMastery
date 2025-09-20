@@ -10,4 +10,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'AngularBasics';
+  message = "Angular is the best JS Framework"
 }
