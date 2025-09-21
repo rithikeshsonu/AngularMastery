@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   slogan = "Your one stop shop for everything";
+  source = "assets/LinkedInBanner.png";
 }

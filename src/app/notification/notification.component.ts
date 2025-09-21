@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-notification',
   standalone: true,
   imports: [],
-  template: `<div class="alert alert-success">
+  template: `<div class="alert alert-success" [hidden]="displayNotification">
                 <p>This website uses cookies to provide better user experience.</p>
               </div>`,
   styles: [`p {
@@ -16,5 +16,5 @@ import { Component } from '@angular/core';
   }`]
 })
 export class NotificationComponent {
-
+  displayNotification = true;
 }
