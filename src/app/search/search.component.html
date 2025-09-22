@@ -4,5 +4,6 @@
 
     <!-- <input type="text" (input)="changeSearchValue($event)">  -->
     <!-- When data is entered, it will emit the data into the event which is of type: any -->
-     <span>You searched for '{{searchValue}}' </span>
-</div>
+
+    <span *ngIf="searchValue != '' "> You searched for '{{searchValue}}' </span>
+</div> 
