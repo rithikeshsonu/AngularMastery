@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -8,8 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './filter.component.css'
 })
 export class FilterComponent {
-  all = 0;
-  free = 1;
-  premium = 2;
-
+  @Input('total') all = 0; // Now can receive data from parent.
+  @Input() free = 0;
+  @Input() premium = 0;
 }
