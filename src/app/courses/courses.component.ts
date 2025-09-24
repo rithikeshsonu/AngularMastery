@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // import { NgForOf } from "../../../node_modules/@angular/common/index";
 import { NgStyle } from  "@angular/common";
+import { SearchNewComponent } from "../search-new/search-new.component";
+import { FilterComponent } from "../filter/filter.component";
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [ NgStyle, CommonModule],
+  imports: [NgStyle, CommonModule, SearchNewComponent, FilterComponent],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })
