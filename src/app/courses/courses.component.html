@@ -3,23 +3,27 @@
     <app-filter 
      [total]="getTotalCourses()"
      [free]="getFreeCourses()" 
-     [premium]="getPremiumCourses()" >
+     [premium]="getPremiumCourses()" 
+     (filterRadioButtonChange)="onFilterRadioButtonChange($event)"
+     >
     </app-filter>
 </div>
-<div class="course-container" *ngFor="let course of courses">
-    <div class="course-card">
-        <div>
-            <img src="assets/LinkedInBanner.png" style="width: 220px; height: 140px;" alt="">
-        </div>
-        <div class="course-name"><h4>{{course.name}}</h4></div>
-        <div class="course-description"><p>{{course.description.slice(0, 80)}}...</p></div>
-        <div class="details">
-            <div class="course-type" [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}">{{course.type}}</div>
-            <div class="course-price"><b>Price: </b>${{course.price}}</div>
-        </div>
-        <div class="course-buttons">
-            <button class="btn btn-buy">Buy Now</button>
-            <button class="btn btn-show">Show Details</button>
+<ng-container *ngFor="let course of courses">
+    <div class="course-container" *ngIf="courseCountRadioButton === 'All' || course.type === courseCountRadioButton">
+        <div class="course-card">
+            <div>
+                <img src="assets/LinkedInBanner.png" style="width: 220px; height: 140px;" alt="">
+            </div>
+            <div class="course-name"><h4>{{course.name}}</h4></div>
+            <div class="course-description"><p>{{course.description.slice(0, 80)}}...</p></div>
+            <div class="details">
+                <div class="course-type" [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}">{{course.type}}</div>
+                <div class="course-price"><b>Price: </b>${{course.price}}</div>
+            </div>
+            <div class="course-buttons">
+                <button class="btn btn-buy">Buy Now</button>
+                <button class="btn btn-show">Show Details</button>
+            </div>
         </div>
     </div>
-</div>
+</ng-container>
