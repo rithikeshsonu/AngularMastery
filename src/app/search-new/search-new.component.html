@@ -1,5 +1,5 @@
 <div class="search-container">
     <span>Search: 
-        <input type="text">
+        <input type="text" [(ngModel)] ="enteredSearchValue" placeholder="Enter course name" (input)="OnSearchTextChange()"/>
     </span>
 </div>
