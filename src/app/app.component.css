@@ -9,3 +9,19 @@ p{
 .wrapper{
     background-color: rgb(164, 130, 65);
 }
+.container{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.more-products{
+    display: flex;
+}
+.btn-more{
+    min-width: 160px;
+    margin-top: 10px;
+    padding: 10px 0px;
+    background-color: #4CAF50;
+    border: none;
+}
