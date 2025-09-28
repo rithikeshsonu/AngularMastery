@@ -3,11 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { ContainerComponent } from './Container/container.component';
 import { DemoNewComponent } from './demo-new/demo-new.component';
 import { ProductsNewComponent } from './products-new/products-new.component';
+import { DemoLifecycleHooksComponent } from './demo-lifecycle-hooks/demo-lifecycle-hooks.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContainerComponent, DemoNewComponent, ProductsNewComponent],
+  imports: [RouterOutlet, ContainerComponent, DemoNewComponent, ProductsNewComponent, DemoLifecycleHooksComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,6 +26,14 @@ export class AppComponent {
     let timeDiff = Math.abs(Date.now() - dobValue.getTime());
     let age = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
     this.age.nativeElement.value = age;
+  }
+  inputText = '';
+  OnSubmit(input: HTMLInputElement){
+    this.inputText = input.value;
+  }
+  destroy = true;
+  DestroyComponent(){
+    this.destroy = false;
   }
 }
  
