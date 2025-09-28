@@ -5,11 +5,12 @@ import { DemoNewComponent } from './demo-new/demo-new.component';
 import { ProductsNewComponent } from './products-new/products-new.component';
 import { DemoLifecycleHooksComponent } from './demo-lifecycle-hooks/demo-lifecycle-hooks.component';
 import { NgIf } from '@angular/common';
+import { ContentChildDemoComponent } from "./content-child-demo/content-child-demo.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContainerComponent, DemoNewComponent, ProductsNewComponent, DemoLifecycleHooksComponent, NgIf],
+  imports: [RouterOutlet, ContainerComponent, DemoNewComponent, ProductsNewComponent, DemoLifecycleHooksComponent, NgIf, ContentChildDemoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
